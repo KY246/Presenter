@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx0YhnM2BAuhdklBRy_NxSbeJfaykQwybWgZClO0z3h4TABIRNbsiwOOFSmDg:https://play-lh.googleusercontent.com/-btReA0zB4FQ/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnx73qJoJnUmFOOCme6NltyCX9qzg/photo.jpg&s" type="image/jpg" sizes="16x16">
+    <meta http-equiv="content-type" content="text/html;" charset="utf-8">
+    <title>Presenter</title>
+    <style>
+      @keyframes hovtr{
+        from{
+          background-color:rgba(255,255,255,0.5);
+          color:black;
+        }to{
+          background-color:rgba(0,0,0,0.5);
+          color:white;
+        }
+      }@keyframes unhovtr{
+        from{
+          background-color:rgba(0,0,0,0.5);
+          color:white;
+        }to{
+          background-color:rgba(255,255,255,0.5);
+          color:black;
+        }
+      }@keyframes appear{
+        from{
+          opacity:0;
+        }to{
+          opacity:1;
+        }
+      }@keyframes disappear{
+        from{
+          opacity:1;
+        }to{
+          opacity:0;
+        }
+      }*{
+        font-family:serif;
+        overflow-y:scroll;
+        overflow-x:hide;
+      }section{
+        padding:15px;
+        padding-top:0px;
+        position:fixed;
+        width:100%;
+        height:100%;
+        background-color:lightyellow;
+      }.button-tr{
+        font-size:25px;
+        background-color:rgba(255,255,255,0.5);
+        padding:5px;
+        border-radius:10px;
+        animation:unhovtr 1s;
+        color:black;
+      }.button-tr:hover{
+        cursor:pointer;
+        background-color:rgba(0,0,0,0.5);
+        color:white;
+        animation:hovtr 1s;
+      }#top{
+        background-color:purple;
+        position:absolute;
+        left:0px;
+        top:0px;
+        width:100%;
+        text-align:center;
+        padding:5px;
+      }#p{
+        position:absolute;
+        top:60px;
+      }#op{
+        position:fixed;
+        left:3%;
+        top:90%;
+        background-color:rgba(0,0,0,0.8);
+        text-align:center
+        font-size:35px;
+        color:white;
+        padding:10px;
+        border-radius:10px;
+        visibility:hidden;
+      }#op span{
+        padding:7px;
+        margin:3px;
+        margin-left:10px;
+        margin-right:10px;
+        border:1px solid white;
+        border-radius:10px;
+      }#op span:hover{
+        cursor:pointer;
+      }#about{
+        z-index:2;
+        position:absolute;
+        background:white;
+        top:60px;
+        left:0px;
+        padding:10px;
+        width:98%;
+        height:85%;
+        font-size:30px;
+        visibility:hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">
+      <span style="font-size:40px;padding-right:15%;font-family:sans-serif;color:white;">Presenter</span>
+      <span class="button-tr" id="ab">About</span>
+      <span class="button-tr" id="pb">Present</span>
+    </div>
+    <div id="p">
+      <section class="slide">
+        <h1>Slide One</h1>
+        <canvas id="textC" width="400" height="400" style="border:1px solid;"></canvas>
+      </section>
+      <div id="op">
+        <!--span id="op1">Slide #1</span-->
+        <span id="op2">Exit</span>
+        <span id="op3">Previous</span>
+        <span id="op4">Next</span>
+      </div>
+      <script type="html" id="code">
+        <head>
+          <style>
+            *{
+              color:green;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>
+            Hi
+          </h1>
+          <h2>or not</h2>
+          <h1>b</h1>
+          <h1>b</h1>
+          <h1>b</h1>
+          <h1>b</h1>
+          <h1>a</h1>
+          <h1>b</h1>
+        </body>
+      </script>
+    </div>
+    <div id="about">
+      Presenter is a custom made Power Point program. This was made by a beginner high school programmer, because he does not like how the official slide show programs doesn't have scrolling for large texts in the slideshow, and wanted a better slide show program with more options and flexibility. Although this is still in its early stages of development, the idea is that anything that can be done with HTML5, CSS3, and Javascript (ES6) can be done on this slide show. That also includes companion languages, such as WebGL, GLSL, and others, which will allow users (himself) to use fast and glitch-free 3D, as well as numerous other helpful tools. Another thing that is useful about having this flexibility, is that he can add user interactions, special animations, and if desired, he can even stick a small game or quiz into every slide.
+    </div>
+    <script>
+      "use strict";
+      let presentV=0;
+      const presentS=document.getElementById("p");
+      const presentB=document.getElementById("pb");
+      const options=document.getElementById("op");
+      //Credit to Suresh Mahawar
+      //https://stackoverflow.com/q/12652769
+      let ctx=document.getElementById("textC").getContext('2d');
+      let data='<svg xmlns="http://www.w3.org/2000/svg"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml">' +document.getElementById("code").innerHTML+'</div></foreignObject></svg>';
+      let DOMURL=window.URL||window.webkitURL||window;
+      let img=new Image();
+      let svg=new Blob([data], {
+        type:'image/svg+xml;charset=utf-8'
+      });
+      let url=DOMURL.createObjectURL(svg);
+      img.onload = function(){
+        ctx.drawImage(img,0,0);
+        DOMURL.revokeObjectURL(url);
+      }
+      img.src=url;
+      
+      document.body.addEventListener("click",function(event){
+        if(presentB == event.target){
+          document.getElementById("about").style.visibility="hidden";
+          presentS.requestFullscreen();
+        }else if((event.target.id == "top" || event.target.parentNode.id == "top") && document.getElementById("about").style.visibility == "visible"){
+          document.getElementById("about").style.visibility="hidden";
+        }else if(event.target.id == "op2"){
+          document.exitFullscreen();
+        }else if(event.target.id == "ab"){
+          document.getElementById("about").style.visibility="visible";
+        }
+      });
+      document.body.addEventListener("mousemove",function(event){
+        if(presentV){
+          if(event.clientY>0.7*window.innerHeight){
+            options.style.opacity=1;
+            options.style.animation="appear 1s";
+          }else{
+            options.style.opacity=0;
+            options.style.animation="disappear 1s";
+          }
+        }
+      });
+      presentS.onfullscreenchange=handlefs;
+      function handlefs(event){
+        presentV=document.fullscreenElement==event.target;
+        options.style.visibility= presentV ? "visible" : "hidden";
+      }
+    </script>
+  </body>
+</html>
