@@ -1,61 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx0YhnM2BAuhdklBRy_NxSbeJfaykQwybWgZClO0z3h4TABIRNbsiwOOFSmDg:https://play-lh.googleusercontent.com/-btReA0zB4FQ/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnx73qJoJnUmFOOCme6NltyCX9qzg/photo.jpg&s" type="image/jpg" sizes="16x16">
+    <link rel="icon" href="https://play-lh.googleusercontent.com/-btReA0zB4FQ/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnx73qJoJnUmFOOCme6NltyCX9qzg/photo.jpg" type="image/jpg" sizes="16x16">
     <meta http-equiv="content-type" content="text/html;" charset="utf-8">
     <title>Presenter</title>
     <style>
-      @keyframes hovtr{
-        from{
-          background-color:rgba(255,255,255,0.5);
-          color:black;
-        }to{
-          background-color:rgba(0,0,0,0.5);
-          color:white;
-        }
-      }@keyframes unhovtr{
-        from{
-          background-color:rgba(0,0,0,0.5);
-          color:white;
-        }to{
-          background-color:rgba(255,255,255,0.5);
-          color:black;
-        }
-      }@keyframes appear{
-        from{
-          opacity:0;
-        }to{
-          opacity:1;
-        }
-      }@keyframes disappear{
-        from{
-          opacity:1;
-        }to{
-          opacity:0;
-        }
+      body{
+        background-color:black;
+        transform-style:preserve-3d;
       }*{
         font-family:serif;
         overflow-y:scroll;
-        overflow-x:hide;
+        overflow-x:hidden;
+        backface-visibility:hidden;
       }section{
         padding:15px;
         padding-top:0px;
         position:fixed;
         width:100%;
         height:100%;
-        background-color:lightyellow;
+        background-color:white;
+      }h1{
+        text-align:center;
+        font-size:100px;
+        margin-top:200px;
+        margin-bottom:50px;
+      }h2{
+        text-align:center;
+        font-size:60px;
+      }h3{
+        text-align:center;
+        font-size:40px;
+      }p,ul,ol{
+        font-size:30px;
+        text-indent:30px;
+        padding:5px 75px 5px 75px;
+      }iframe{
+        position:absolute;
+        width:80%;
+        padding:0px;
+        border:none;
+        height:70%;
+        margin:0px;
+        left:10%;
+      }.slide{
+        visibility:hidden;
+        top:0px;
+      }.back{
+        position:fixed;
+        width:110%;
+        height:110%;
+        z-index:-1;
+        left:0px;
+        top:0px;
       }.button-tr{
         font-size:25px;
         background-color:rgba(255,255,255,0.5);
         padding:5px;
         border-radius:10px;
-        animation:unhovtr 1s;
         color:black;
+        transition-timing-function: ease;
+        transition:color 1s, background-color 1s;
       }.button-tr:hover{
         cursor:pointer;
         background-color:rgba(0,0,0,0.5);
         color:white;
-        animation:hovtr 1s;
+      }.not-allowed:hover{
+        cursor:url(http://www.rw-designer.com/cursor-extern.php?id=1271), not-allowed;
+      }.allowed:hover{
+        cursor:pointer;
       }#top{
         background-color:purple;
         position:absolute;
@@ -64,9 +77,11 @@
         width:100%;
         text-align:center;
         padding:5px;
+        z-index:3;
       }#p{
         position:absolute;
         top:60px;
+        padding:0px;
       }#op{
         position:fixed;
         left:3%;
@@ -78,6 +93,8 @@
         padding:10px;
         border-radius:10px;
         visibility:hidden;
+        transition-timing-function: ease;
+        transition:opacity 1s;
       }#op span{
         padding:7px;
         margin:3px;
@@ -85,8 +102,8 @@
         margin-right:10px;
         border:1px solid white;
         border-radius:10px;
-      }#op span:hover{
-        cursor:pointer;
+        transition-timing-function: ease;
+        transition:background-color 1s;
       }#about{
         z-index:2;
         position:absolute;
@@ -97,6 +114,8 @@
         width:98%;
         height:85%;
         font-size:30px;
+        visibility:hidden;
+      }#hide{
         visibility:hidden;
       }
     </style>
@@ -109,62 +128,383 @@
     </div>
     <div id="p">
       <section class="slide">
-        <h1>Slide One</h1>
-        <canvas id="textC" width="400" height="400" style="border:1px solid;"></canvas>
+        <img src = 'https://sites.google.com/site/beautyofnature98/_/rsrc/1482911355882/config/customLogo.gif' class="back">
+        <h1>Presenter</h1>
+        <h2>The Best Slideshows</h2>
+      </section>
+      <section class="slide">
+        <img src = 'https://catholicexchange.com/wp-content/uploads/2019/07/shutterstock_1225625557.jpg' class="back">
+        <h3>Why?</h3>
+        <span style="color:white;text-shadow:3px 3px 4px black;">
+        <p>Presenter is the best program for making slideshows, because of its flexibility. It is possible to do a whole number of things which are impossible on other slide show programs. There is not much that Presenter can't do as you will see in the following slides. Almost anything that can be done on larger presentation platforms, such as Microsoft's Power Point and Google Slides can also be done here.</p>
+        <p>One of the best differences that Presenter has to other presentation tools, is that it can have scrolling textboxes.</p>
+        <p>Here is Presenter compared to popular Presentation Programs.</p>
+        <h3>Google Slides</h3>
+        <p>Advantages</p>
+        <ul>
+          <li>Scrolling Textboxes</li>
+          <li>More Transition Animations</li>
+          <li>Faster &amp; more Animations</li>
+          <li>More embedding options</li>
+          <li>More Complex Animations</li>
+          <li>Allows for User Interactions</li>
+          <li>Custom Cursors</li>
+          <li>Option to stop slide from moving when clicking a page (activated)</li>
+          <li>Audio Imports</li>
+        </ul>
+        <p>Disadvantages</p>
+        <ul>
+          <li>Not user Freindly</li>
+          <li>No speaker Notes</li>
+          <li>No collaborations</li>
+        </ul>
+        <h3>Microsoft PowerPoint</h3>
+        <p>Advantages</p>
+        <ul>
+          <li>Free</li>
+          <li>Easier to make scrolling textboxes</li>
+          <li>More accessible &amp; easier to share</li>
+          <li>Faster &amp; more Animations</li>
+          <li>More embedding options</li>
+          <li>More Complex Animations</li>
+          <li>Allows for More User Interactions</li>
+          <li>Custom Cursors</li>
+          <li>Option to stop slide from moving when clicking a page (activated)</li>
+        </ul>
+        <p>Disadvantages</p>
+        <ul>
+          <li>Less built in Transition Animations</li>
+          <li>Not user Freindly</li>
+          <li>No speaker Notes</li>
+          <li>No collaborations</li>
+        </ul>
+        <h3>Apple Keynote</h3>
+        <p>Advantages</p>
+        <ul>
+          <li>Always Free</li>
+          <li>Works on PCs</li>
+          <li>Scrolling Textboxes</li>
+          <li>Faster &amp; more Animations</li>
+          <li>More embedding options</li>
+          <li>More Complex Animations</li>
+          <li>Allows for More User Interactions</li>
+          <li>Custom Cursors</li>
+          <li>Option to stop slide from moving when clicking a page (activated)</li>
+        </ul>
+        <p>Disadvantages</p>
+        <ul>
+          <li>Less built in Transition Animations</li>
+          <li>Not user Freindly</li>
+          <li>No speaker Notes</li>
+          <li>No collaborations</li>
+        </ul>
+        </span>
+      </section>
+      <section class="slide">
+        <img src = 'https://steemitimages.com/DQmPC3uLLeSez7q4pPUxM9GXh6ov44tWikpa3xCGfMek1zB/conducted-collaboration-experiment-participants-environments-artificial-listened_5e43e23c-178a-11e7-9d7a-cd3db232b835.jpg' class="back">
+        <span style="color:white;text-shadow:3px 3px 4px black;">
+          <h3>Embed</h3>
+          <p>One of the specialties about Presenter is how it can embed many things.</p>
+          <p>A Desmos Graph can be embedded (scroll down for more)</p>
+          <iframe src="https://www.desmos.com/calculator/kihjluohq9?embed"></iframe>
+          <p style="margin-top:50%">Obviously, a video can be inserted.</p>
+          <iframe src="https://www.youtube.com/embed/PqFFQB64JS8" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+          <p style="margin-top:50%">Depending on the hosting webpage, many other things can be embedded.</p>
+          
+        </span>
+      </section>
+      <section class="slide">
+        <img src = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nature-quotes-1557340276.jpg' class="back">
+        <h3>Did you like it?</h3>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc9WjhS7_eYnIgcaolKg6BE3u_Qd5kQ-c5T2es8GQel10GKkQ/viewform?embedded=true">Loading…</iframe>
       </section>
       <div id="op">
-        <!--span id="op1">Slide #1</span-->
-        <span id="op2">Exit</span>
-        <span id="op3">Previous</span>
-        <span id="op4">Next</span>
+        <!--span id="op1" class="allowed">Slide #1</span-->
+        <span id="op2" class="allowed">Exit</span>
+        <span id="op3" class="not-allowed">Previous</span>
+        <span id="op4" class="allowed">Next</span>
       </div>
-      <script type="html" id="code">
-        <head>
-          <style>
-            *{
-              color:green;
-            }
-          </style>
-        </head>
-        <body>
-          <h1>
-            Hi
-          </h1>
-          <h2>or not</h2>
-          <h1>b</h1>
-          <h1>b</h1>
-          <h1>b</h1>
-          <h1>b</h1>
-          <h1>a</h1>
-          <h1>b</h1>
-        </body>
-      </script>
     </div>
     <div id="about">
       Presenter is a custom made Power Point program. This was made by a beginner high school programmer, because he does not like how the official slide show programs doesn't have scrolling for large texts in the slideshow, and wanted a better slide show program with more options and flexibility. Although this is still in its early stages of development, the idea is that anything that can be done with HTML5, CSS3, and Javascript (ES6) can be done on this slide show. That also includes companion languages, such as WebGL, GLSL, and others, which will allow users (himself) to use fast and glitch-free 3D, as well as numerous other helpful tools. Another thing that is useful about having this flexibility, is that he can add user interactions, special animations, and if desired, he can even stick a small game or quiz into every slide.
     </div>
+    <img src="http://www.rw-designer.com/cursor-extern.php?id=1271" width="1" height="1">
     <script>
       "use strict";
       let presentV=0;
       const presentS=document.getElementById("p");
       const presentB=document.getElementById("pb");
       const options=document.getElementById("op");
-      //Credit to Suresh Mahawar
-      //https://stackoverflow.com/q/12652769
-      let ctx=document.getElementById("textC").getContext('2d');
-      let data='<svg xmlns="http://www.w3.org/2000/svg"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml">' +document.getElementById("code").innerHTML+'</div></foreignObject></svg>';
-      let DOMURL=window.URL||window.webkitURL||window;
-      let img=new Image();
-      let svg=new Blob([data], {
-        type:'image/svg+xml;charset=utf-8'
-      });
-      let url=DOMURL.createObjectURL(svg);
-      img.onload = function(){
-        ctx.drawImage(img,0,0);
-        DOMURL.revokeObjectURL(url);
+      let slideN=0;
+      let inT=0;
+      const oppo={
+        "0":0,
+        "1":1,
+        "2":3,
+        "3":2,
+        "4":5,
+        "5":4,
+        "6":"b",
+        "7":"a",
+        "8":"d",
+        "9":"c",
+        a:7,
+        b:6,
+        c:9,
+        d:8,
+        e:"f",
+        f:"e",
+        g:"h",
+        h:"g",
+        i:"j",
+        j:"i",
+        k:"l",
+        l:"k",
+        m:"n",
+        n:"m",
+        o:"p",
+        p:"o",
+        q:"r",
+        r:"q"
+      };
+      const slides=document.getElementsByClassName("slide");
+      let backs=document.getElementsByClassName("back");
+      slides[slideN].style.visibility="visible";
+      document.getElementById("op3").style.backgroundColor="rgba(255,255,255,0.5)";
+      function transition(way){
+        let type="q";
+        if(way<0){
+          type=oppo[type];
+        }
+        inT=1;
+        let oldS=slideN;
+        slideN+=way;
+        slides[slideN].style.zIndex=0;
+        slides[oldS].style.zIndex=-1;
+        slides[oldS].scrollTop=0;
+        let opac=0;
+        let tr=window.setInterval(function(){
+          switch(type){
+            case 0:
+              slides[slideN].style.opacity=opac;
+            break;
+            case 1:
+              slides[slideN].style.opacity=2*Math.max(opac-0.5,0);
+              slides[oldS].style.opacity=2*Math.max(-opac+0.5,0);
+            break;
+            case 2:
+              slides[slideN].style.left=(100-opac*100)+"%";
+              slides[oldS].style.left=(-opac*100)+"%";
+              backs[slideN].style.left=(100-opac*100)+"%";
+              backs[oldS].style.left=(-opac*100)+"%";
+            break;
+            case 3:
+              slides[slideN].style.left=(-100+opac*100)+"%";
+              slides[oldS].style.left=(opac*100)+"%";
+              backs[slideN].style.left=(-100+opac*100)+"%";
+              backs[oldS].style.left=(opac*100)+"%";
+            break;
+            case 4:
+              slides[slideN].style.top=(100-opac*100)+"%";
+              slides[oldS].style.top=(-opac*100)+"%";
+              backs[slideN].style.top=(100-opac*100)+"%";
+              backs[oldS].style.top=(-opac*100)+"%";
+            break;
+            case 5:
+              slides[slideN].style.top=(-100+opac*100)+"%";
+              slides[oldS].style.top=(opac*100)+"%";
+              backs[slideN].style.top=(-100+opac*100)+"%";
+              backs[oldS].style.top=(opac*100)+"%";
+            break;
+            case 6:
+              slides[slideN].style.left=(100-opac*100)+"%";
+              backs[slideN].style.left=(100-opac*100)+"%";
+            break;
+            case 7:
+              slides[slideN].style.left=(-100+opac*100)+"%";
+              backs[slideN].style.left=(-100+opac*100)+"%";
+            break;
+            case 8:
+              slides[slideN].style.top=(100-opac*100)+"%";
+              backs[slideN].style.top=(100-opac*100)+"%";
+            break;
+            case 9:
+              slides[slideN].style.top=(-100+opac*100)+"%";
+              backs[slideN].style.top=(-100+opac*100)+"%";
+            break;
+            case "a":
+              slides[slideN].style.zIndex=-1;
+              slides[oldS].style.zIndex=0;
+              slides[oldS].style.left=(-opac*100)+"%";
+              backs[oldS].style.left=(-opac*100)+"%";
+            break;
+            case "b":
+              slides[slideN].style.zIndex=-1;
+              slides[oldS].style.zIndex=0;
+              slides[oldS].style.left=(opac*100)+"%";
+              backs[oldS].style.left=(opac*100)+"%";
+            break;
+            case "c":
+              slides[slideN].style.zIndex=-1;
+              slides[oldS].style.zIndex=0;
+              slides[oldS].style.top=(-opac*100)+"%";
+              backs[oldS].style.top=(-opac*100)+"%";
+            break;
+            case "d":
+              slides[slideN].style.zIndex=-1;
+              slides[oldS].style.zIndex=0;
+              slides[oldS].style.top=(opac*100)+"%";
+              backs[oldS].style.top=(opac*100)+"%";
+            break;
+            case "e":
+              slides[slideN].style.transform="scale("+opac+")";
+            break;
+            case "f":
+              slides[slideN].style.zIndex=-1;
+              slides[oldS].style.zIndex=0;
+              slides[oldS].style.transform="scale("+(1-opac)+")";
+            break;
+            case "g":
+              presentS.style.perspective="500px";
+              slides[oldS].style.zIndex="none";
+              slides[slideN].style.zIndex="none";
+              slides[oldS].style.transform="translateZ("+(Math.max(Math.max(-1000*opac,1000*opac-1000),-250)-window.outerWidth)+"px)rotateY("+(-0.94*opac)+"rad)translateZ("+window.outerWidth+"px)";
+              slides[slideN].style.transform="translateZ("+(Math.max(Math.max(-1000*opac,1000*opac-1000),-250)-window.outerWidth)+"px)rotateY("+(-0.94*opac+0.94)+"rad)translateZ("+window.outerWidth+"px)";
+              slides[oldS].style.webkitFilter="brightness("+(1-1.1*opac)+")";
+              slides[slideN].style.webkitFilter="brightness("+(1.1*opac-0.1)+")";
+              opac-=0.01;
+            break;
+            case "h":
+              presentS.style.perspective="500px";
+              slides[oldS].style.zIndex="none";
+              slides[slideN].style.zIndex="none";
+              slides[oldS].style.transform="translateZ("+(Math.max(Math.max(-1000*opac,1000*opac-1000),-250)-window.outerWidth)+"px)rotateY("+(0.94*opac)+"rad)translateZ("+window.outerWidth+"px)";
+              slides[slideN].style.transform="translateZ("+(Math.max(Math.max(-1000*opac,1000*opac-1000),-250)-window.outerWidth)+"px)rotateY("+(0.94*opac-0.94)+"rad)translateZ("+window.outerWidth+"px)";
+              slides[oldS].style.webkitFilter="brightness("+(1-1.1*opac)+")";
+              slides[slideN].style.webkitFilter="brightness("+(1.1*opac-0.1)+")";
+              opac-=0.01;
+            break;
+            case "i":
+              presentS.style.perspective="500px";
+              slides[oldS].style.zIndex="none";
+              slides[slideN].style.zIndex="none";
+              slides[oldS].style.transform="translateZ("+(Math.max(Math.max(-1000*opac,1000*opac-1000),-250)-window.outerHeight)+"px)rotateX("+(-0.94*opac)+"rad)translateZ("+window.outerHeight+"px)";
+              slides[slideN].style.transform="translateZ("+(Math.max(Math.max(-1000*opac,1000*opac-1000),-250)-window.outerHeight)+"px)rotateX("+(-0.94*opac+0.94)+"rad)translateZ("+window.outerHeight+"px)";
+              slides[oldS].style.webkitFilter="brightness("+(1-opac)+")";
+              slides[slideN].style.webkitFilter="brightness("+opac+")";
+              opac-=0.01;
+            break;
+            case "j":
+              presentS.style.perspective="500px";
+              slides[oldS].style.zIndex="none";
+              slides[slideN].style.zIndex="none";
+              slides[oldS].style.transform="translateZ("+(Math.max(Math.max(-1000*opac,1000*opac-1000),-250)-window.outerHeight)+"px)rotateX("+(0.94*opac)+"rad)translateZ("+window.outerHeight+"px)";
+              slides[slideN].style.transform="translateZ("+(Math.max(Math.max(-1000*opac,1000*opac-1000),-250)-window.outerHeight)+"px)rotateX("+(0.94*opac-0.94)+"rad)translateZ("+window.outerHeight+"px)";
+              slides[oldS].style.webkitFilter="brightness("+(1-opac)+")";
+              slides[slideN].style.webkitFilter="brightness("+opac+")";
+              opac-=0.01;
+            break;
+            case "k":
+              slides[oldS].style.transform="scale("+Math.max(Math.max(1-1.5*opac,1.5*opac-0.5),0.6)+")translateX("+(-opac*100)+"%)";
+              slides[slideN].style.transform="scale("+Math.max(Math.max(1-1.5*opac,1.5*opac-0.5),0.6)+")translateX("+(100-opac*100)+"%)";
+              opac-=0.01;
+            break;
+            case "l":
+              slides[oldS].style.transform="scale("+Math.max(Math.max(1-1.5*opac,1.5*opac-0.5),0.6)+")translateX("+(opac*100)+"%)";
+              slides[slideN].style.transform="scale("+Math.max(Math.max(1-1.5*opac,1.5*opac-0.5),0.6)+")translateX("+(opac*100-100)+"%)";
+              opac-=0.01;
+            break;
+            case "m":
+              slides[oldS].style.transform="scale("+Math.max(Math.max(1-1.5*opac,1.5*opac-0.5),0.6)+")translateY("+(-opac*100)+"%)";
+              slides[slideN].style.transform="scale("+Math.max(Math.max(1-1.5*opac,1.5*opac-0.5),0.6)+")translateY("+(100-opac*100)+"%)";
+              opac-=0.01;
+            break;
+            case "n":
+              slides[oldS].style.transform="scale("+Math.max(Math.max(1-1.5*opac,1.5*opac-0.5),0.6)+")translateY("+(opac*100)+"%)";
+              slides[slideN].style.transform="scale("+Math.max(Math.max(1-1.5*opac,1.5*opac-0.5),0.6)+")translateY("+(opac*100-100)+"%)";
+              opac-=0.01;
+            break;
+            case "o":
+              presentS.style.perspective="1000px";
+              slides[oldS].style.zIndex="none";
+              slides[slideN].style.zIndex="none";
+              slides[oldS].style.transform="translateZ("+Math.max(Math.max(-2000*opac,2000*opac-2000),-500)+"px)rotateY("+(Math.PI*opac)+"rad)";
+              slides[slideN].style.transform="translateZ("+Math.max(Math.max(-2000*opac,2000*opac-2000),-500)+"px)rotateY("+(Math.PI+Math.PI*opac)+"rad)";
+              slides[oldS].style.webkitFilter="brightness("+(1-1.8*opac)+")";
+              slides[slideN].style.webkitFilter="brightness("+(1.8*opac-0.8)+")";
+            break;
+            case "p":
+              presentS.style.perspective="1000px";
+              slides[oldS].style.zIndex="none";
+              slides[slideN].style.zIndex="none";
+              slides[oldS].style.transform="translateZ("+Math.max(Math.max(-2000*opac,2000*opac-2000),-500)+"px)rotateY("+(-Math.PI*opac)+"rad)";
+              slides[slideN].style.transform="translateZ("+Math.max(Math.max(-2000*opac,2000*opac-2000),-500)+"px)rotateY("+(Math.PI-Math.PI*opac)+"rad)";
+              slides[oldS].style.webkitFilter="brightness("+(1-1.8*opac)+")";
+              slides[slideN].style.webkitFilter="brightness("+(1.8*opac-0.8)+")";
+            break;
+            case "q":
+              presentS.style.perspective="1000px";
+              slides[oldS].style.zIndex="none";
+              slides[slideN].style.zIndex="none";
+              slides[oldS].style.transform="translateZ("+Math.max(Math.max(-2000*opac,2000*opac-2000),-500)+"px)rotateX("+(Math.PI*opac)+"rad)";
+              slides[slideN].style.transform="translateZ("+Math.max(Math.max(-2000*opac,2000*opac-2000),-500)+"px)rotateX("+(Math.PI+Math.PI*opac)+"rad)";
+              slides[oldS].style.webkitFilter="brightness("+(1-1.8*opac)+")";
+              slides[slideN].style.webkitFilter="brightness("+(1.8*opac-0.8)+")";
+            break;
+            case "r":
+              presentS.style.perspective="1000px";
+              slides[oldS].style.zIndex="none";
+              slides[slideN].style.zIndex="none";
+              slides[oldS].style.transform="translateZ("+Math.max(Math.max(-2000*opac,2000*opac-2000),-500)+"px)rotateX("+(-Math.PI*opac)+"rad)";
+              slides[slideN].style.transform="translateZ("+Math.max(Math.max(-2000*opac,2000*opac-2000),-500)+"px)rotateX("+(Math.PI-Math.PI*opac)+"rad)";
+              slides[oldS].style.webkitFilter="brightness("+(1-1.8*opac)+")";
+              slides[slideN].style.webkitFilter="brightness("+(1.8*opac-0.8)+")";
+            break;
+            default:
+              opac++;
+            break;
+          }
+          opac+=0.02;
+          if(opac>=1){
+            window.clearInterval(tr);
+            slides[oldS].style.visibility="hidden";
+            inT=0;
+            //reset
+            slides[slideN].style.opacity=1;
+            slides[oldS].style.opacity=1;
+            slides[slideN].style.left="0px";
+            slides[oldS].style.left="0px";
+            backs[slideN].style.left="0px";
+            backs[oldS].style.left="0px";
+            slides[slideN].style.top="0px";
+            slides[oldS].style.top="0px";
+            backs[slideN].style.top="0px";
+            backs[oldS].style.top="0px";
+            slides[slideN].style.transform="";
+            slides[oldS].style.transform="";
+            presentS.style.perspective="";
+            slides[oldS].style.webkitFilter="";
+            slides[slideN].style.webkitFilter="";
+          }
+        },20);
+        setTimeout(function(){
+          slides[slideN].style.visibility="visible";
+        },20);
+        if(slideN==0){
+          document.getElementById("op3").style.backgroundColor="rgba(255,255,255,0.5)";
+          document.getElementById("op3").className="not-allowed";
+        }else{
+          document.getElementById("op3").style.backgroundColor="";
+          document.getElementById("op3").className="allowed";
+        }
+        if(slideN==slides.length-1){
+          document.getElementById("op4").style.backgroundColor="rgba(255,255,255,0.5)";
+          document.getElementById("op4").className="not-allowed";
+        }else{
+          document.getElementById("op4").style.backgroundColor="";
+          document.getElementById("op4").className="allowed";
+        }
       }
-      img.src=url;
-      
       document.body.addEventListener("click",function(event){
         if(presentB == event.target){
           document.getElementById("about").style.visibility="hidden";
@@ -173,6 +513,10 @@
           document.getElementById("about").style.visibility="hidden";
         }else if(event.target.id == "op2"){
           document.exitFullscreen();
+        }else if(event.target.id == "op3" && !inT && slideN>0){
+          transition(-1);
+        }else if(event.target.id == "op4" && !inT && slideN<slides.length-1){
+          transition(1);
         }else if(event.target.id == "ab"){
           document.getElementById("about").style.visibility="visible";
         }
@@ -181,10 +525,8 @@
         if(presentV){
           if(event.clientY>0.7*window.innerHeight){
             options.style.opacity=1;
-            options.style.animation="appear 1s";
           }else{
             options.style.opacity=0;
-            options.style.animation="disappear 1s";
           }
         }
       });
